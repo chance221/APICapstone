@@ -19,7 +19,8 @@ function watchRestForm(){
         event.preventDefault();
         let cityEntered = $('#city-entered').val();
         let cuisineEntered = $('#js-rest-drop').val();
-        $('#results-banner').removeClass('hidden');   
+        $('#results-banner').removeClass('hidden');
+        $('#results-space-3').addClass('hidden')   
         getCityCode(cityEntered, cuisineEntered);
         $('#city-entered').val("");
         $('#js-rest-drop').val("");
