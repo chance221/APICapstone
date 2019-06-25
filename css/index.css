@@ -14,22 +14,29 @@ body{
 
 nav{
     width:100vw;
-    height: 35vh;
-    background-image: url("../media/cropped-banner.jpg");
+    height: 20vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../media/image.jpg");;
     background-size: cover;
     background-repeat:no-repeat;
+    font-size:1.5em;
+    color: red;
+    margin-top: -30px;
+    
 }
-nav{
-    width:100vw;
-    height: 25vh;
-    background-image: url("../media/small-banner.jpg");
-    background-size: cover;
-    background-repeat:no-repeat;
+
+h1{
+    font-size:1.5em !important; 
+}
+
+.top-message{
+    padding-top:2vw;
+    padding-bottom:2vw;
 }
 
 h2{
     font-family:Fredericka the Great;
-    font-weight: 100;
+    font-weight: 200;
+    color:red;
 }
 
 .sec{
@@ -54,6 +61,16 @@ h2{
     padding:5px;
 }
 
+#results-banner{
+    background-color:black;
+    color:white;
+}
+
+#results-banner h2{
+    background-color:black;
+    color:white;
+}
+
 #t-results li{
     text-decoration:none;
     width:50%;
@@ -70,6 +87,10 @@ h2{
     height:auto;
 }
 
+.text{
+    font-family:'Open Sans', sans-serif;
+}
+
 .hidden{
     display:none;
 }
@@ -80,17 +101,22 @@ h2{
     
 }
 
+.result-head{
+    padding:15px;
+    font-size:1.5em;
+}
+
 #Out-Exp{
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../media/rest-back.png");
     background-size: cover;
     background-repeat:no-repeat;
     width:100%;
-    height:50vh;
+    height:55vh;
     margin:0px;
     padding:0px;
     margin-top:-15px;
     color:white;
-    border:3px, solid, red;
+    margin-top:-19px;
 }
 
 #Home-Exp{
@@ -98,23 +124,50 @@ h2{
     background-size: cover;
     background-repeat:no-repeat;
     width:100%;
-    height:50vh;
+    height:55vh;
     margin:0px;
     padding:0px;
     color:white;
 }
 
+.flex-container-2{
+    background:black;
+    color:white;
+    width:100vw;
+
+    
+}
+
+ul{
+    list-style-type:none;
+    line-height:1.5;
+}
+
+
+
+
+ul#rest-results {
+    padding: 0;
+    margin: 0;
+    
+}
+
+
+a{
+    text-decoration-color:rebeccapurple;
+    text-decoration:none;
+}
+
 
 @media only screen and (min-width: 570px){
-    nav{
-        width:100vw;
-        height: 40vh;
-        background-image: url("../media/cropped-banner.jpg");
-        background-size: cover;
-        background-repeat:no-repeat;
+     nav div h1{
+        padding-top:5vh;
     }
-    
-    
+     
+    nav{
+        height:25vh;
+    }
+
     .hidden{
         display:none;
     }
@@ -129,7 +182,8 @@ h2{
         display: -webkit-flex;
         display: flex;
         flex-flow: wrap;
-        justify-content: space-around;
+        align-content: stretch;
+        width:100vw;
       }
 
     .flex-container-2{
@@ -153,22 +207,23 @@ h2{
     #js-video-results{
         display:inline-flex;
         flex-direction:column;
-
     }
 
     .sec{
         width: 30vw;
-        padding: 15px;
+        padding:15px;
         margin: 10px; 
     }
 
     .text-results{
         max-width:45vw;
+        min-width:45vw;
         margin:10px
     }
 
     .video-results{
         max-width:45vw;
+        min-width:45vw;
         margin: 10px;
     } 
 
@@ -176,8 +231,8 @@ h2{
         background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../media/rest-back.png");
         background-size: cover;
         background-repeat:no-repeat;
-        width:48%;
-        height:50vh;
+        width:50%;
+        height:55vh;
         margin:0px;
         padding:0px;
         color:white;
@@ -189,8 +244,8 @@ h2{
         background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../media/home-back.jpg");
         background-size: cover;
         background-repeat:no-repeat;
-        width:48%;
-        height:50vh;
+        width:50%;
+        height:55vh;
         margin:0px;
         padding:0px;
         color:white;

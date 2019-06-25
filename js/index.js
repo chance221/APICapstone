@@ -176,7 +176,7 @@ function displayRecipeResults(responseJson){
                 </a>
                 </div>
                 <a href=${results1[i].href}>Click Here to Go to the full recipe</a>
-                <p>Ingredients Include: ${results1[i].ingredients}</p>
+                <p class="text">Ingredients Include: ${results1[i].ingredients}</p>
                 </li>` 
             )
         }
@@ -204,7 +204,7 @@ function displayYoutubeResults(responseJson) {
     for (let i = 0; i < responseJson.items.length; i++){
         $('#v-results').append(
         `<li><h4>${responseJson.items[i].snippet.title}</h4>
-        <p>${responseJson.items[i].snippet.description}</p>
+        <p class="text">${responseJson.items[i].snippet.description}</p>
         <img src='${responseJson.items[i].snippet.thumbnails.default.url}'>
         </li>`
         )};
