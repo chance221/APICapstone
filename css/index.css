@@ -1,12 +1,14 @@
 
 
-    /* font-family: 'Fredericka the Great', cursive; HEDER FONT
+    /* 
+    font-family: 'Fredericka the Great', cursive; HEDER FONT
 
     font-family: 'Open Sans', sans-serif; TEXT FONT
 
-    font-family: 'Over the Rainbow', cursive;  HEADER FONT*/ 
+    font-family: 'Over the Rainbow', cursive;  HEADER FONT
+    */ 
 
-/* Need to upload a smaller image for anything smaller than 400px vw */
+
 body{
     font-family:Over the Rainbow;
     font-weight:200;
@@ -15,13 +17,12 @@ body{
 nav{
     width:100vw;
     height: 20vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../media/image.jpg");;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../media/image.jpg");;
     background-size: cover;
     background-repeat:no-repeat;
     font-size:1.5em;
     color: red;
     margin-top: -30px;
-    
 }
 
 h1{
@@ -149,15 +150,12 @@ ul{
 ul#rest-results {
     padding: 0;
     margin: 0;
-    
 }
-
 
 a{
     text-decoration-color:rebeccapurple;
     text-decoration:none;
 }
-
 
 @media only screen and (min-width: 570px){
      nav div h1{
