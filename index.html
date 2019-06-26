@@ -10,7 +10,8 @@
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" 
         crossorigin="anonymous">
     </script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Open+Sans|Over+the+Rainbow&display=swap" > 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Open+Sans|Over+the+Rainbow&display=swap" >
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/index.css">
 </head>
@@ -29,44 +30,48 @@
         <div class="head center"><h2>Live To Eat At Home!</h2></div>
         <div class="search-section center">
             <div class="center" id="home-search" aria-label="Home Search Section">
+                <fieldset>
                 <form id="home-search-form" aria-label="Home Search Form" name="homeForm" class="form">
-                    <div class="lblz"><label for="home-search-box"><h3>Search Recipes Using a Search Term, or Category or Enter Both</h3></label></div>
-                    <div class="search-space">
-                        <input role="searchbox" type="text" class="search-box" id="js-recipe-term" placeholder="Enter Search Here">
-                    </div>
-                    <div class="lblz"><label for="home-dropdown"><h3>Search by cuisine category</h3></label></div>
-                        
-                    <select name = "home-cuisine" id="js-home-drop">
-                        <option value=""></option>
-                        <option value="American">American</option> 
-                        <option value="British">British</option>
-                        <option value="Carribbean">Carribbean</option>
-                        <option value="Chinese">Chinese</option>
-                        <option value="French">French</option>  
-                        <option value="German">German</option>
-                        <option value="Greek">Greek</option>  
-                        <option value="Indian">Indian</option>
-                        <option value="Italian">Italian</option>
-                        <option value="Japanese">Japanese</option>
-                        <option value="Korean">Korean</option>
-                        <option value="Mexican">Mexican</option>
-                        <option value="Southern">Southern</option>
-                        <option value="Thai">Thai</option>       
-                    </select>
+                    <fieldset>
+                        <div class="lblz"><legend for="home-search-box"><h3>Search Recipes Using a Search Term, or Category or Enter Both</h3></legend></div>
+                        <div class="search-space">
+                            <input role="searchbox" type="text" class="search-box" id="js-recipe-term" placeholder="Enter Search Here">
+                        </div>
+                        <div class="lblz"><label for="home-dropdown"><h3>Search by cuisine category</h3></label></div>
+                            
+                        <select name = "home-cuisine" id="js-home-drop">
+                            <option value=""></option>
+                            <option value="American">American</option> 
+                            <option value="British">British</option>
+                            <option value="Carribbean">Carribbean</option>
+                            <option value="Chinese">Chinese</option>
+                            <option value="French">French</option>  
+                            <option value="German">German</option>
+                            <option value="Greek">Greek</option>  
+                            <option value="Indian">Indian</option>
+                            <option value="Italian">Italian</option>
+                            <option value="Japanese">Japanese</option>
+                            <option value="Korean">Korean</option>
+                            <option value="Mexican">Mexican</option>
+                            <option value="Southern">Southern</option>
+                            <option value="Thai">Thai</option>       
+                        </select>
 
-                    <div class="btn-space">
-                        <input type="submit" class="sbmt-btn js-recipe-btn" value="Search Recipes"/>
-                    </div>
+                        <div class="btn-space">
+                            <input type="submit" class="sbmt-btn js-recipe-btn" value="Search Recipes"/>
+                        </div>
+                    </fieldset>
                 </form>
             </div>
         </div>
     </section>
     <section role="region" class="sec center" aria-label="Search Restaurant Experiences" id="Out-Exp" >
-        <div class="head center"><h2>Live to Eat Out!</h2></div>
+        <div class="head center top-pad"><h2>Live to Eat Out!</h2></div>
         <div class="search-section center">
             <div class="center" id="rest-search" aria-label="Restaurant Search Section">
                 <form id="out-search-form" aria-label="Eat Out Search Form" name="outForm" class="form">
-                    <div class="lblz"><label for="hoearch-box"><h3>Search Top Rated Restaurants By Typing a Search Term Or Select a Category Or Both</h3></label></div>
+                    <fieldset>
+                    <div class="lblz"><legend for="hoearch-box"><h3>Search Top Rated Restaurants By Typing a Search Term Or Select a Category Or Both</h3></legend></div>
                     <div class="search-space">
                         <input role="searchbox" aria-label="Restaurant Search Text Box" type="text" id="city-entered" class="search-box" placeholder="Ex: Detroit, MI" required>
                     </div>
@@ -91,28 +96,29 @@
                             <option value="95">Thai</option>       
                         </select>
                     </div>
-                    <div class="btn-space"><input type="submit" class="sbmt-btn js-rest-btn" value="Search Restaurants"/></div>
+                    <div class="btn-space"><input type="submit" class="sbmt-btn js-rest-btn" value="Search Restaurants"/></div> 
+                    </fieldset>
                 </form>
             </div>
         </div>
     </section>
 </article>
     <div class='js-error-message'></div>
-    <div class="hidden center" id="results-banner"><h2>Choose Your Cullinary Experience</h2></div>
+    <div class="hidden center" id="results-banner"><h2>Choose Your Culinary Experience</h2></div>
 <article class="flex-container-2" id="js-results">
     <section role="region" class="text-results" id="js-text-results">
-        <div id="results-space-1" class="hidden">
+        <div id="results-space-1" class="hidden" aria-live="polite">
             <h3 class="result-head">Recipes</h3>
             <ul id="t-results"></ul>
         </div>
     </section>
-    <section role="region" class="video-results" id="js-video-results">
+    <section role="region" class="video-results" id="js-video-results" aria-live="polite">
         <div id="results-space-2" class="hidden">
             <h3 class="result-head">Videos</h3>   
             <ul id="v-results"></ul>
         </div>  
     </section>
-    <section role="region" class="restaurant-results" id="js-rest-section">
+    <section role="region" class="restaurant-results" id="js-rest-section" aria-live="polite">
         <div id="results-space-3" class="hidden center">
             <h3 >Restaurants</h3>
             <ul id="rest-results"></ul>

@@ -102,7 +102,7 @@ function displayRestaurantResults(restJson){
     if(results.length === 0) {
         console.log('No results')
         
-        $('#rest-results').append(`<img src="https://fakeimg.pl/210x130/ff0000/000/?text=No_Results_Available">`);
+        $('#rest-results').append(`<img src="https://fakeimg.pl/210x130/d2691e/000/?text=No_Results_Available">`);
     } else {
         for(let i=0; i<restJson.restaurants.length; i++){
             $('#rest-results').append(
@@ -127,7 +127,9 @@ function displayRestaurantResults(restJson){
 function getRecipe(term, cuisine){
     //because there are only two parameters string did not create an object to hold them
     $('#v-results').empty();
-    const recipeURL=`http://www.recipepuppy.com/api/?i=${term}&q=${cuisine}`;
+    const edamamAPIkey = "46be8d99438323770ae606f065931061";
+    const edamamID = "977bf7f7";
+    const recipeURL=`https://api.edamam.com/search?q=${cuisine}%20${term}&app_id=${edamamID}&app_key=${edamamAPIkey}`;
     
     const options = {
         mode: 'cors',
@@ -153,30 +155,33 @@ function getRecipe(term, cuisine){
 
 function displayRecipeResults(responseJson){
 
-    let results1 = responseJson.results;
-    
+    let results1 = responseJson.hits;
+    let holdIngredient = ""
     // make sure we received results back
     if(results1.length === 0) {
       console.log('No results')
 
-      $('#t-results').append(`<img src="https://fakeimg.pl/210x130/ff0000/000/?text=No_Results_Available">`);
+      $('#t-results').append(`<img src="https://fakeimg.pl/210x130/d2691e/000/?text=No_Results_Available">`);
       
     } else {
 
-        console.log("writing recipe to dom");
+        console.log(results1);
+
+        
 
         for(let i=0; i< results1.length; i++){
+            // for(let n=0; n< results1[i].recipe.ingredientLines.length; n++){
+            // holdIngredient += `<li> ${results[i].recipe.ingredientLines[n]} </li>`
+            // }
             console.log("running through loop")
             $('#t-results').append(
-                `<li class="result-box"><h4>${results1[i].title}</h4>
+                `<li class="result-box"><h4>${results1[i].recipe.label}</h4>
                 <div class="recipe-img">
-                <a href=${results1[i].href}>
-                    <img src="${results1[i].thumbnail}" alt="Picture of ${results1[i].title} if available" onError="imgError(this);"/>
+                <a href=${results1[i].recipe.shareAs}>
+                    <img src="${results1[i].recipe.image}" alt="Picture of ${results1[i].recipe.label} if available" onError="imgError(this);" height="80" width="130"/>
                 </a>
                 </div>
-                <a href=${results1[i].href}>Click Here to Go to the full recipe</a>
-                <p class="text">Ingredients Include: ${results1[i].ingredients}</p>
-                </li>` 
+                <a href=${results1[i].recipe.shareAs}>Click Here to Go to the full recipe</a></li>`
             )
         }
     
@@ -198,7 +203,7 @@ function displayYoutubeResults(responseJson) {
   console.log(responseJson);
   if(responseJson.items.length === 0) {
     console.log('No results')
-    $('#v-results').append(`<img src="https://fakeimg.pl/210x130/ff0000/000/?text=No_Videos_Available">`);
+    $('#v-results').append(`<img src="https://fakeimg.pl/210x130/d2691e/000/?text=No_Videos_Available">`);
   } else {
     for (let i = 0; i < responseJson.items.length; i++){
         $('#v-results').append(
@@ -247,7 +252,7 @@ function getYouTubeVideos(cuisine, term, maxResults=10) {
 //Puts in alternate image for search if img is not available.
 function imgError(image) {
     image.onerror = "";
-    image.src = "https://fakeimg.pl/100x75/ff0000/000/?text=No_Pic_Available";
+    image.src = "https://fakeimg.pl/100x75/d2691e/000/?text=No_Pic_Available";
     return true;
 }
 

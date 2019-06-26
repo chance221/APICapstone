@@ -6,38 +6,42 @@
     font-family: 'Open Sans', sans-serif; TEXT FONT
 
     font-family: 'Over the Rainbow', cursive;  HEADER FONT
+
+    font-family: 'Work Sans', sans-serif;
     */ 
 
 
 body{
-    font-family:Over the Rainbow;
+    font-family: 'Work Sans', sans-serif;
+    
     font-weight:200;
 }
 
 nav{
     width:100vw;
     height: 20vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../media/image.jpg");;
+    background-image: linear-gradient(rgba(0,0,0, 0.3), rgba(0,0,0, 0.3)), url("../media/image.jpg");;
     background-size: cover;
     background-repeat:no-repeat;
     font-size:1.5em;
-    color: red;
+    color: chocolate;
     margin-top: -30px;
 }
 
 h1{
-    font-size:1.5em !important; 
+    font-family: 'Over the Rainbow', cursive;
+    font-size:2em !important;
+    padding-top: 40px; 
 }
 
 .top-message{
-    padding-top:2vw;
-    padding-bottom:2vw;
+    font-family: 'Open Sans', sams-serif;
 }
 
 h2{
-    font-family:Fredericka the Great;
-    font-weight: 200;
-    color:red;
+    font-family:'Over the Rainbow', cursive;;
+    font-weight: 600;
+    color:chocolate;
 }
 
 .sec{
@@ -108,7 +112,7 @@ h2{
 }
 
 #Out-Exp{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../media/rest-back.png");
+    background-image: linear-gradient(rgba(0,0,0, 0.3), rgba(0,0,0, 0.3)), url("../media/rest-back.png");
     background-size: cover;
     background-repeat:no-repeat;
     width:100%;
@@ -116,12 +120,12 @@ h2{
     margin:0px;
     padding:0px;
     margin-top:-15px;
-    color:white;
+    color: white;
     margin-top:-19px;
 }
 
 #Home-Exp{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../media/home-back.jpg");
+    background-image: linear-gradient(rgba(0,0,0, 0.3), rgba(0,0,0, 0.3)), url("../media/home-back.jpg");
     background-size: cover;
     background-repeat:no-repeat;
     width:100%;
@@ -135,8 +139,6 @@ h2{
     background:black;
     color:white;
     width:100vw;
-
-    
 }
 
 ul{
@@ -144,12 +146,25 @@ ul{
     line-height:1.5;
 }
 
+div#home-search {
+    padding: 5px;
+}
 
-
+div#rest-search {
+    padding: 5px;
+}
 
 ul#rest-results {
     padding: 0;
     margin: 0;
+}
+
+section#Home-Exp {
+    padding-top: 5px;
+}
+
+.lblz {
+    padding: 15px;
 }
 
 a{
@@ -157,6 +172,13 @@ a{
     text-decoration:none;
 }
 
+fieldset{
+    border:none
+}
+
+.top-pad{
+    padding-top:10px;
+}
 @media only screen and (min-width: 570px){
      nav div h1{
         padding-top:5vh;
@@ -226,28 +248,31 @@ a{
     } 
 
     #Out-Exp{
-        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../media/rest-back.png");
+        
         background-size: cover;
         background-repeat:no-repeat;
         width:50%;
-        height:55vh;
+        height:70.5vh;
         margin:0px;
         padding:0px;
         color:white;
-        border:3px, solid, red;
         text-align: center;
     }
     
     #Home-Exp{
-        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../media/home-back.jpg");
+        
         background-size: cover;
         background-repeat:no-repeat;
         width:50%;
-        height:55vh;
+        height:70vh;
         margin:0px;
         padding:0px;
         color:white;
         text-align:center;
+    }
+
+    .top-pad{
+        padding-top:0px;
     }
 
 }
