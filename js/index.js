@@ -23,6 +23,7 @@ function watchRestForm(){
         getCityCode(cityEntered, cuisineEntered);
         $('#city-entered').val("");
         $('#js-rest-drop').val("");
+        scrolls();
     })
 }
 
@@ -41,9 +42,11 @@ function watchHomeForm(){
         $('#rest-results').empty();
         $("#js-home-drop").val("");
         $('#js-recipe-term').val("");
+        scrolls();
     })
 
 }
+
 
 ///////////////////////////////////////////////////////////////////
 /////////get restaurants by city and state/////////////////////////
@@ -112,7 +115,7 @@ function displayRestaurantResults(restJson){
                 <div>Address: ${results[i].restaurant.location.address}</div>
                 <div>Phone: ${results[i].restaurant.phone_numbers}</div>
                 <div>Rating: ${results[i].restaurant.user_rating.aggregate_rating}/5</div>
-                <div><a href="${results[i].restaurant.menu_url}">Menu</a>
+                <div><a href="${results[i].restaurant.menu_url}" target="_blank">Menu</a>
             </div>`)
             }
     }
@@ -177,11 +180,11 @@ function displayRecipeResults(responseJson){
             $('#t-results').append(
                 `<li class="result-box"><h4>${results1[i].recipe.label}</h4>
                 <div class="recipe-img">
-                <a href=${results1[i].recipe.shareAs}>
+                <a href="${results1[i].recipe.shareAs}" target="_blank">
                     <img src="${results1[i].recipe.image}" alt="Picture of ${results1[i].recipe.label} if available" onError="imgError(this);" height="80" width="130"/>
                 </a>
                 </div>
-                <a href=${results1[i].recipe.shareAs}>Click Here to Go to the full recipe</a></li>`
+                <a href="${results1[i].recipe.shareAs}" trget="_blank">Click Here to Go to the full recipe</a></li>`
             )
         }
     
@@ -206,10 +209,14 @@ function displayYoutubeResults(responseJson) {
     $('#v-results').append(`<img src="https://fakeimg.pl/210x130/d2691e/000/?text=No_Videos_Available">`);
   } else {
     for (let i = 0; i < responseJson.items.length; i++){
+        
+        let description = responseJson.items[i].snippet.description.replace(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/,"").trim();
+        
         $('#v-results').append(
         `<li><h4>${responseJson.items[i].snippet.title}</h4>
-        <p class="text">${responseJson.items[i].snippet.description}</p>
-        <img src='${responseJson.items[i].snippet.thumbnails.default.url}'>
+        <p class="text">${description}</p>
+        <a href="https://youtube.com/watch?v=${responseJson.items[i].id.videoId}" target="_blank"><img src='${responseJson.items[i].snippet.thumbnails.default.url}'></a><br>
+        <a href="https://youtube.com/watch?v=${responseJson.items[i].id.videoId}" target="_blank">Click Here To Go To Video</a>
         </li>`
         )};
   
@@ -254,6 +261,16 @@ function imgError(image) {
     image.onerror = "";
     image.src = "https://fakeimg.pl/100x75/d2691e/000/?text=No_Pic_Available";
     return true;
+}
+
+function scrolls(){
+    $('html, body').animate(
+        {
+          scrollTop: ($('#js-results').offset().top)
+        },
+        600,
+        'linear'
+      )
 }
 
 

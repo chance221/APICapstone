@@ -27,20 +27,20 @@
     </div>
 <article class= "flex-container-1">
     <section class="sec center" role="region" aria-label="Search Home Cooking Experience" id="Home-Exp" >
-        <div class="head center"><h2>Live To Eat At Home!</h2></div>
-        <div class="search-section center">
+        <div class="head center"><h2 class="title">Live To Eat At Home!</h2></div>
+        <div class="search-section1 center">
             <div class="center" id="home-search" aria-label="Home Search Section">
                 <fieldset>
                 <form id="home-search-form" aria-label="Home Search Form" name="homeForm" class="form">
                     <fieldset>
-                        <div class="lblz"><legend for="home-search-box"><h3>Search Recipes Using a Search Term, or Category or Enter Both</h3></legend></div>
+                        <div class="lblz center">
+                            <legend for="home-search-box" class="center search-box-lable"><h3>Search Recipes Using a Search Term, or Category or Enter Both</h3></legend></div>
                         <div class="search-space">
                             <input role="searchbox" type="text" class="search-box" id="js-recipe-term" placeholder="Enter Search Here">
                         </div>
-                        <div class="lblz"><label for="home-dropdown"><h3>Search by cuisine category</h3></label></div>
-                            
-                        <select name = "home-cuisine" id="js-home-drop">
-                            <option value=""></option>
+                        
+                        <select name = "home-cuisine" id="js-home-drop" class="search-box">
+                            <option value="">Search by cuisine category</option>
                             <option value="American">American</option> 
                             <option value="British">British</option>
                             <option value="Carribbean">Carribbean</option>
@@ -66,20 +66,17 @@
         </div>
     </section>
     <section role="region" class="sec center" aria-label="Search Restaurant Experiences" id="Out-Exp" >
-        <div class="head center top-pad"><h2>Live to Eat Out!</h2></div>
+        <div class="head center top-pad"><h2 class="title">Live to Eat Out!</h2></div>
         <div class="search-section center">
             <div class="center" id="rest-search" aria-label="Restaurant Search Section">
                 <form id="out-search-form" aria-label="Eat Out Search Form" name="outForm" class="form">
                     <fieldset>
-                    <div class="lblz"><legend for="hoearch-box"><h3>Search Top Rated Restaurants By Typing a Search Term Or Select a Category Or Both</h3></legend></div>
+                    <div class="lblz"><legend for="search-box" class="search-box-lable"><h3>Search Top Rated Restaurants By Typing a Search Term Or Select a Category Or Both</h3></legend></div>
                     <div class="search-space">
                         <input role="searchbox" aria-label="Restaurant Search Text Box" type="text" id="city-entered" class="search-box" placeholder="Ex: Detroit, MI" required>
                     </div>
-                    
-                    <div class="lblz"><label for="rest-dropdown"><h3>Select a cuisine category</h3></label></div>
-                        
-                        <select name = "rest-cuisine" id="js-rest-drop">
-                                <option value=""></option>
+                        <select name = "rest-cuisine" id="js-rest-drop" class="search-box">
+                            <option value="">Select a cuisine category</option>
                             <option value="1">American</option> 
                             <option value="133">British</option>
                             <option value="158">Carribbean</option>
@@ -96,7 +93,7 @@
                             <option value="95">Thai</option>       
                         </select>
                     </div>
-                    <div class="btn-space"><input type="submit" class="sbmt-btn js-rest-btn" value="Search Restaurants"/></div> 
+                    <div class="btn-space2"><input type="submit" class="sbmt-btn js-rest-btn" value="Search Restaurants"/></div> 
                     </fieldset>
                 </form>
             </div>
